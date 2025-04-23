@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Info - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+
+    <section id="useful-hero">
+        <h1>Useful Information</h1>
+        <p>Find all the essential details about JDM FEST 2025 here!</p>
+    </section>
+
+    <section class="info-grid">
+        <div class="info-card" id="weather">
+            <h2>Weather Updates</h2>
+            <p>Stay prepared! The forecast for the event day is sunny with a high of 25°C.</p>
+        </div>
+
+        <div class="info-card" id="contact-info">
+            <h2>Contact Us</h2>
+            <p>For any inquiries, please reach out to us:</p>
+            <ul>
+                <li>Email: support@jdmfest2025.com</li>
+                <li>Phone: +123 456 7890</li>
+                <li>Social Media: Instagram, Facebook, TikTok</li>
+            </ul>
+        </div>
+
+        <div class="info-card" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What time does the event start?</h3>
+                <p>The event starts at 10:00 AM and ends at 8:00 PM.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are tickets available at the gate?</h3>
+                <p>Yes, tickets can be purchased at the gate, but pre-booking is recommended.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there food available at the event?</h3>
+                <p>Yes, there will be food trucks and vendors offering a variety of options.</p>
+            </div>
+        </div>
+
+        <div class="info-card" id="suicide-prevention">
+            <h2>Suicide Prevention Awareness</h2>
+            <p>Your mental health matters. If you or someone you know is struggling, help is available.</p>
+            <ul>
+                <li><strong>International:</strong> <a
+                        href="https://blog.opencounseling.com/suicide-hotlines/" target="_blank">Find a
+                        helpline near you</a></li>
+                <li><strong>USA:</strong> Call or text <a href="tel:988">988</a> (Suicide & Crisis Lifeline)</li>
+                <li><strong>UK:</strong> Call <a href="tel:116123">116 123</a> (Samaritans)</li>
+                <li><strong>Ireland:</strong> Call <a href="tel:1800247247">1800 247 247</a> (Pieta House)</li>
+            </ul>
+            <p>Visit <a href="https://afsp.org/suicide-prevention-resources/"
+                    target="_blank">afsp.org/suicide-prevention-resources</a> for more resources.</p>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach((item) => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><img src="images/insta.jpg" alt="Instagram Logo"></a>
+            <a href="https://facebook.com" target="_blank"><img src="images/face.jpg" alt="Facebook Logo"></a>
+            <a href="https://tiktok.com" target="_blank"><img src="images/tt.jpg" alt="TikTok Logo"></a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</html>

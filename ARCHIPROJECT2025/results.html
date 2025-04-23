@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift Winners - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html" class="active">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+
+    <!-- Hero Section -->
+    <section id="results-hero">
+        <h1>Drift Winners Podium</h1>
+        <p>Celebrating the champions of JDM FEST 2024!</p>
+    </section>
+
+    <!-- Podium Section -->
+    <section id="podium">
+        <div class="podium-container">
+            <!-- Second Place -->
+            <div class="podium-level second">
+                <img src="images/second.png" alt="Second Place Winner">
+                <h2>2nd Place</h2>
+                <p>James Deane 🇮🇪</p>
+                <p>Car: Nissan Silvia S15</p>
+            </div>
+
+            <!-- First Place -->
+            <div class="podium-level first">
+                <img src="images/first.png" alt="First Place Winner">
+                <h2>1st Place</h2>
+                <p>Keiichi Tsuchiya 🇯🇵</p>
+                <p>Car: Toyota AE86</p>
+            </div>
+
+            <!-- Third Place -->
+            <div class="podium-level third">
+                <img src="images/third.jpg" alt="Third Place Winner">
+                <h2>3rd Place</h2>
+                <p>Daigo Saito 🇯🇵</p>
+                <p>Car: Toyota Supra A90</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <!-- Hamburger Button (for mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html" class="active">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+
+    <!-- Hero Section -->
+    <section id="merch-hero">
+        <h1>Official JDM FEST 2025 Merchandise</h1>
+        <p>Get your hands on exclusive JDM FEST gear and show your love for Japanese car culture!</p>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section id="merchandise">
+        <h2>Our Products</h2>
+        <div class="merch-cards">
+            <div class="merch-card">
+                <img src="images/jumper.png" alt="JDM jumper">
+                <h3>JDM jumper</h3>
+                <p>Price: €25</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/shirt.png" alt="JDM T-shirt">
+                <h3>JDM T-shirt</h3>
+                <p>Price: €15</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/jacket.png" alt="JDM jacket">
+                <h3>JDM jacket</h3>
+                <p>Price: €80</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/hat.png" alt="JDM hat">
+                <h3>JDM hat</h3>
+                <p>Price: €10</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/stickers.png" alt="JDM Stickers">
+                <h3>JDM stickers</h3>
+                <p>Price: €3</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/cup.png" alt="JDM cup">
+                <h3>JDM cup</h3>
+                <p>Price: €5</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/toy.png" alt="GTR figurine">
+                <h3>JDM GTR figurine</h3>
+                <p>Price: €30</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+            <div class="merch-card">
+                <img src="images/case.png" alt="JDM case">
+                <h3>JDM Datsun case</h3>
+                <p>Price: €12</p>
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="merch-cta">
+        <h2>Don't Miss Out!</h2>
+        <p>Limited stock available. Grab your favorite JDM FEST merchandise before it's gone!</p>
+        <a href="contact.html" class="cta-button">Contact Us for Bulk Orders</a>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items">
+                <p>Your cart contains:</p>
+            </div>
+            <button id="checkout-button" class="cta-button">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // Get modal elements
+        const cartModal = document.getElementById("cart-modal");
+        const closeButton = document.querySelector(".close-button");
+        const cartItems = document.getElementById("cart-items");
+        const checkoutButton = document.getElementById("checkout-button");
+
+        // Add event listeners to "Buy Now" buttons
+        const buyButtons = document.querySelectorAll(".cta-button");
+        buyButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                const productCard = button.parentElement;
+                const productName = productCard.querySelector("h3").innerText;
+                const productPrice = productCard.querySelector("p").innerText;
+
+                // Add product to cart
+                addToCart(productName, productPrice);
+                cartModal.style.display = "flex"; // Show the modal
+            });
+        });
+
+        // Close modal on close button click
+        closeButton.addEventListener("click", () => {
+            cartModal.style.display = "none";
+        });
+
+        // Close modal on outside click
+        window.addEventListener("click", (e) => {
+            if (e.target === cartModal) {
+                cartModal.style.display = "none";
+            }
+        });
+
+        // Add product to cart
+        function addToCart(name, price) {
+            const cartItem = document.createElement("div");
+            cartItem.innerHTML = `<p>${name} - ${price}</p>`;
+            cartItems.appendChild(cartItem);
+        }
+
+        // Checkout functionality
+        checkoutButton.addEventListener("click", () => {
+            if (cartItems.children.length === 0) {
+                alert("Your cart is empty. Add some items before checking out!");
+            } else {
+                // Redirect to the payment page
+                window.location.href = "payment.html";
+            }
+        });
+
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</html>

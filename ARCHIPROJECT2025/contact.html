@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Hamburger Button (for mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+
+    <section id="contact">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Please fill out the form below.</p>
+        </div>
+
+        <div class="form-container">
+            <!-- Forms Wrapper -->
+            <div class="forms-wrapper">
+                <!-- Contact Form -->
+                <form action="http://rdwd.atspace.cc/response.php" method="post" class="contact-form" id="contact-form">
+                    <h2>Contact Us</h2>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address">
+
+                    <label for="mobile">Mobile Number</label>
+                    <input type="text" id="mobile" name="mobile"
+                        placeholder="Enter your mobile number (e.g., 0871234567)" required>
+
+                    <label for="email1">Email</label>
+                    <input type="email" id="email1" name="email1" placeholder="Enter your email address" required>
+
+                    <label for="email2">Retype Email</label>
+                    <input type="email" id="email2" name="email2" placeholder="Retype your email address" required>
+
+                    <p>Are you a member?</p>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="member" name="member" value="member" required>
+                            <label for="member">Member</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="non-member" name="member" value="non-member" required>
+                            <label for="non-member">Non-Member</label>
+                        </div>
+                    </div>
+
+                    <label for="query">Query/Comment</label>
+                    <textarea id="query" name="query" placeholder="Enter your query or comment" required></textarea>
+
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+
+                <!-- Register Your Car Form | cant get this one to display my information-->
+                <form action="http://rdwd.atspace.cc/response.php" method="post" class="register-form"
+                    id="register-form">
+                    <h2>Register Your Car</h2>
+
+                    <label for="car-owner-name">Owner's Name</label>
+                    <input type="text" id="car-owner-name" name="car-owner-name" placeholder="Enter your name" required>
+
+                    <label for="car-email">Email</label>
+                    <input type="email" id="car-email" name="car-email" placeholder="Enter your email address" required>
+
+                    <label for="car-make">Car Make</label>
+                    <input type="text" id="car-make" name="car-make" placeholder="Enter car make (e.g., Nissan)"
+                        required>
+
+                    <label for="car-model">Car Model</label>
+                    <input type="text" id="car-model" name="car-model" placeholder="Enter car model (e.g., Almera)"
+                        required>
+
+                    <label for="car-year">Year</label>
+                    <input type="number" id="car-year" name="car-year" placeholder="Enter car year (e.g., 1999)"
+                        min="1900" max="2025" required>
+
+                    <label for="car-query">Query/Comment</label>
+                    <textarea id="car-query" name="car-query" placeholder="Enter your query or comment"
+                        required></textarea>
+
+                    <button type="submit" class="submit-button">Register Car</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JavaScript for additional validation
+    const contactForm = document.getElementById('contact-form');
+    const email1 = document.getElementById('email1');
+    const email2 = document.getElementById('email2');
+    const mobile = document.getElementById('mobile');
+
+    contactForm.addEventListener('submit', (e) => {
+        let valid = true;
+
+        // Validate email fields match
+        if (email1.value !== email2.value) {
+            alert('Emails do not match!');
+            valid = false;
+        }
+
+        // Validate mobile number
+        const mobileRegex = /^(089)\d{7}$/;
+        if (!mobileRegex.test(mobile.value)) {
+            alert('Invalid mobile number! It must start with 087, 086, or 085 and be 10 digits long.');
+            valid = false;
+        }
+
+        // Prevent form submission if validation fails
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</html>

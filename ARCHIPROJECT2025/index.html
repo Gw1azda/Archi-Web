@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="video-banner">
+        <video autoplay muted loop>
+            <source src="video/cars.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-separator"></div>
+        <div class="banner-text">
+            <h1>JDM FEST SUMMER 2025</h1>
+            <p>The Ultimate Japanese Car Experience</p>
+            <div id="countdown" class="countdown"></div>
+        </div>
+    </div>
+
+    <div class="hero-cta">
+        <p class="cta-text">Want to buy tickets or register your car?</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="cta-button">Buy Tickets</a>
+            <a href="contact.html" class="cta-button">Register Car</a>
+        </div>
+    </div>
+
+    <div class="logos-section">
+        <img src="images/logo.png" alt="Left Logo" class="logo left-logo">
+        <img src="images/racer.png.png" alt="Racer Logo" class="logo middle-logo">
+        <img src="images/logo.png" alt="Right Logo" class="logo right-logo">
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+
+    <section id="about">
+        <h2>Welcome to JDM FEST 2025</h2>
+        <p>Get ready for the most exciting summer fest of the year, where you can witness the ultimate showcase of JDM
+            cars in action on our grand track course!</p>
+        <p>From breathtaking car shows to adrenaline-pumping drift racing, we have attractions for car enthusiasts of
+            all ages. Explore rare JDM models, meet fellow car lovers, and enjoy live entertainment throughout the day.
+        </p>
+        <p>Don't miss out on exclusive merchandise, food trucks, and interactive experiences that will make this event
+            unforgettable!</p>
+        <div class="about-buttons">
+            <a href="results.html" class="cta-button">View Winners</a>
+            <a href="gallery.html" class="cta-button">Explore Gallery</a>
+        </div>
+        <div class="about-images">
+            <img src="images/homeimg.png.png" alt="JDM Car 1">
+            <img src="images/homeimg2.png.png" alt="JDM Car 2">
+        </div>
+    </section>
+
+    <section id="featured-cars">
+        <h2>Featured Cars Last Year</h2>
+        <h3>Read their story!</h3>
+        <div class="featured-cars-container">
+            <div class="car">
+                <img src="images/skyline.jpg" alt="Nissan Skyline GT-R" data-hover="images/man-hover.jpg">
+                <h3>Nissan Skyline GT-R</h3>
+                <p>Ever since I was a kid, I dreamed of owning a Skyline GT-R. Now,
+                    after years of searching, saving, and wrenching late into the night,
+                    I’m finally bringing mine back to life. Every scratch,
+                    every part I replace—it’s all part of the journey.
+                    This isn’t just a car to me. It’s a piece of my past,
+                    my passion, and a reminder that some dreams are worth
+                    chasing no matter how long it takes.
+                </p>
+            </div>
+            <div class="car">
+                <img src="images/supra.jpg" alt="Toyota Supra" data-hover="images/man2-hover.jpg">
+                <h3>Toyota Supra</h3>
+                <p>
+                    Ever since I first heard the roar of a Supra, I knew I had to have one.
+                    It took time, patience, and a whole lot of grit,
+                    but now I have managed to restore mine piece by piece.
+                    Every turn of the wrench brings me closer to the car
+                    I’ve always imagined—raw, powerful, and mine.
+                    It’s more than just a build.
+                    It’s a connection to the past, a tribute to JDM legends,
+                    and a promise I made to myself years ago: never stop chasing
+                    what sets your soul on fire.
+                </p>
+            </div>
+            <div class="car">
+                <img src="images/rx7.jpg" alt="Mazda RX-7" data-hover="images/man3-hover.jpg">
+                <h3>Mazda RX-7</h3>
+                <p>
+                    The RX-7 has always had a special place in my heart—
+                    something about that rotary engine and the way it handles just hits different.
+                    Restoring mine isn’t just about bringing back a classic,
+                    it’s about rebuilding a piece of my own story.
+                    Every panel, every tune, every long night in the garage is part of the journey.
+                    This isn’t just a car it’s a dream I refused to let go of,
+                    and now, I can bring my dream everywhere i go.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Set the date and time of the event
+        const eventDate = new Date("July 19, 2025 10:00:00").getTime();
+
+        // Get the element where the countdown will be displayed
+        const countdownEl = document.getElementById("countdown");
+
+        // Start an interval that updates every second (1000ms)
+        const countdownInterval = setInterval(() => {
+            // Get the current time
+            const now = new Date().getTime();
+
+            // Calculate the time remaining until the event
+            const distance = eventDate - now;
+
+            // If the event date has passed
+            if (distance <= 0) {
+                clearInterval(countdownInterval); // Stop the countdown
+                countdownEl.textContent = "Time for an energy rush"; // Display a final message
+                return;
+            }
+
+            // Calculate days, hours, minutes, and seconds from the remaining time
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
+
+            // Update the countdown display on the page
+            countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000); // Repeat every 1 second
+
+        // Select all car containers
+        const carContainers = document.querySelectorAll('.car');
+
+        carContainers.forEach((car) => {
+            const img = car.querySelector('img'); // Get the image inside the car container
+            const hoverSrc = img.getAttribute('data-hover'); // Get the hover image source
+            const originalSrc = img.src; // Store the original image source
+
+            // Preload the hover image
+            if (hoverSrc) {
+                const preloadImg = new Image();
+                preloadImg.src = hoverSrc;
+            }
+
+            // Add hover event listeners to the entire car container
+            car.addEventListener('mouseenter', () => {
+                if (hoverSrc) {
+                    img.src = hoverSrc; // Change to hover image
+                }
+            });
+
+            car.addEventListener('mouseleave', () => {
+                if (hoverSrc) {
+                    img.src = originalSrc; // Revert to original image
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</html>

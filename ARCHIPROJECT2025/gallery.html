@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Hamburger Button (for mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+    <h1>Welcome to the scatter gallery</h1>
+    <p>Check out the amazing cars and moments from JDM FEST 2025!</p>
+    <section id="gallery">
+        <h2>Click on a car</h2>
+        <div class="gallery-images">
+            <img src="images/silvia.jpg" alt="Nissan Silvia"
+                data-caption="The Nissan Silvia is a legendary JDM car known for its drifting capabilities and sleek design.">
+            <img src="images/civic.jpg" alt="Honda Civic"
+                data-caption="The Honda Civic is a popular tuner car, loved for its reliability and customization potential.">
+            <img src="images/tureno.jpg" alt="Toyota AE86 Trueno"
+                data-caption="The Toyota AE86 Trueno is a drift icon, made famous by the Initial D anime series.">
+            <img src="images/nsx.jpg" alt="Honda NSX"
+                data-caption="The Honda NSX is a supercar that combines performance with everyday usability, designed with input from Ayrton Senna.">
+            <img src="images/rx7.jpg" alt="Mazda RX-7"
+                data-caption="The Mazda RX-7 is a rotary-engine sports car, celebrated for its lightweight design and agility.">
+            <img src="images/supra.jpg" alt="Toyota Supra"
+                data-caption="The Toyota Supra is a high-performance sports car, renowned for its 2JZ engine and appearances in pop culture.">
+            <img src="images/skyline.jpg" alt="Nissan Skyline GT-R"
+                data-caption="The Nissan Skyline GT-R, also known as 'Godzilla,' is a legendary JDM car with advanced technology and performance.">
+            <img src="images/eclipse.jpg" alt="Mitsubishi Eclipse"
+                data-caption="The Mitsubishi Eclipse is a stylish sports car, popularized by its role in the Fast & Furious franchise.">
+            <img src="images/rx8.jpg" alt="Mazda RX-8"
+                data-caption="The Mazda RX-8 is a unique sports car with a rotary engine and distinctive freestyle doors.">
+            <img src="images/180sx.jpg" alt="Nissan 180sx"
+                data-caption="The Nissan 180sx is a versatile sports car, loved for its drifting and tuning potential.">
+            <img src="images/mr2.jpg" alt="Toyota MR2"
+                data-caption="The Toyota MR2 is a mid-engine sports car, offering a thrilling driving experience in a compact package.">
+            <img src="images/prelude.jpg" alt="Honda Prelude"
+                data-caption="The Honda Prelude is a stylish coupe, known for its innovative technology and sporty handling.">
+            <img src="images/240sx.jpg" alt="Nissan 240SX"
+                data-caption="The Nissan 240SX is a favorite among drifters, offering rear-wheel drive and a lightweight chassis.">
+            <img src="images/miata.jpg" alt="Mazda Miata"
+                data-caption="The Mazda Miata is a lightweight roadster, celebrated for its simplicity and driving pleasure.">
+            <img src="images/evo.jpg" alt="Mitsubishi Lancer Evolution"
+                data-caption="The Mitsubishi Lancer Evolution is a rally-inspired sedan, known for its turbocharged engine and AWD system.">
+        </div>
+    </section>
+    <script>
+        const images = document.querySelectorAll(".gallery-images img");
+        const lightbox = document.createElement("div");
+        lightbox.id = "lightbox";
+        document.body.appendChild(lightbox);
+
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "✖";
+        closeButton.id = "close-lightbox";
+        lightbox.appendChild(closeButton);
+
+        const imgElement = document.createElement("img");
+        lightbox.appendChild(imgElement);
+
+        const captionElement = document.createElement("p");
+        captionElement.id = "lightbox-caption";
+        lightbox.appendChild(captionElement);
+
+        let currentIndex = 0;
+
+        // Open lightbox
+        const openLightbox = (index) => {
+            currentIndex = index;
+            imgElement.src = images[currentIndex].src;
+            captionElement.textContent = images[currentIndex].getAttribute("data-caption");
+            lightbox.classList.add("active");
+        };
+
+        // Close lightbox
+        const closeLightbox = () => {
+            lightbox.classList.remove("active");
+        };
+
+        // Add click event to images
+        images.forEach((image, index) => {
+            image.addEventListener("click", () => openLightbox(index));
+        });
+
+        // Close lightbox on close button click
+        closeButton.addEventListener("click", closeLightbox);
+
+        // Close lightbox on background click
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</html>

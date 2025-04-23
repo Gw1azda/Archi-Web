@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - JDM FEST 2025</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Hamburger Button (for mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="navbar-container">
+        <img src="images/logo.png" alt="Left Logo" class="navbar-logo left-logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+                <li><a href="results.html">Winners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="useful.html">Useful</a></li>
+            </ul>
+        </nav>
+        <img src="images/logo.png" alt="Right Logo" class="navbar-logo right-logo">
+    </div>
+    <h1>Events</h1>
+    <p>Discover the exciting events happening at JDM FEST 2025!</p>
+    <section id="hero">
+        <img src="images/logo.png" alt="Left Logo" class="logo left-logo">
+        <img src="images/crowd.png" alt="Drifting Cars" class="hero-image">
+        <img src="images/logo.png" alt="Right Logo" class="logo right-logo">
+    </section>
+
+    <h2>Welcome to JDM FEST 2025</h2>
+    <p>Join us for an unforgettable experience celebrating Japanese car culture!</p>
+    <p>From thrilling drift exhibitions to stunning car shows, there's something for every car enthusiast!</p>
+
+    <h2>Upcoming Events</h2>
+    <div class="event-cards">
+        <div class="event-card">
+            <img src="images/carexpo.jpg" alt="Car Show">
+            <h3>Car Show</h3>
+            <p>Date: July 20, 2025</p>
+            <p>Experience the best JDM cars on display!</p>
+        </div>
+        <div class="event-card">
+            <img src="images/car-drift.png" alt="Drift Exhibition">
+            <h3>Drift Exhibition</h3>
+            <p>Date: July 21, 2025</p>
+            <p>Watch thrilling drift performances by top drivers!</p>
+        </div>
+        <div class="event-card">
+            <img src="images/meet.jpg" alt="Meet & Greet">
+            <h3>Meet & Greet</h3>
+            <p>Date: July 22, 2025</p>
+            <p>Meet your favorite car enthusiasts and drivers!</p>
+        </div>
+    </div>
+
+
+    <section id="schedule">
+        <img src="images/divider.png" alt="divider" class="divider">
+        <h2>Event Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10:00 AM</td>
+                    <td>Car Show Opening</td>
+                    <td>Main Arena</td>
+                </tr>
+                <tr>
+                    <td>12:00 PM</td>
+                    <td>Drift Exhibition</td>
+                    <td>Drift Track</td>
+                </tr>
+                <tr>
+                    <td>2:00 PM</td>
+                    <td>Meet & Greet</td>
+                    <td>VIP Lounge</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="featured-guests">
+        <h2>Featured Guests</h2>
+        <div class="guest-cards">
+            <div class="guest-card">
+                <img src="images/keiichi.jpg" alt="Guest 1">
+                <h3>Keiichi Tsuchiya 🇯🇵</h3>
+                <p>The Drift King basically the godfather of drifting. He made drifting
+                    a motorsport and brought it to the world. His style and legacy are unmatched</p>
+            </div>
+            <div class="guest-card">
+                <img src="images/James.jpg" alt="Guest 2">
+                <h3>James Deane 🇮🇪</h3>
+                <p>One of the most dominant drivers in Formula Drift history.
+                    Known for smooth, consistent lines and huge angle. 3-time Formula Drift champion!</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+
+</body>
+<footer>
+    <div class="footer-container">
+        <p>2025 JDM FEST. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/insta.jpg" alt="Instagram Logo">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/face.jpg" alt="Facebook Logo">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="images/tt.jpg" alt="Twitter Logo">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</html>
